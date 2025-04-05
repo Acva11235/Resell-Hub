@@ -10,6 +10,28 @@ if (!isset($_SESSION['seller_id'])) {
 $seller_id = $_SESSION['seller_id'];
 $seller_name = isset($_SESSION['seller_name']) ? htmlspecialchars($_SESSION['seller_name']) : 'Seller';
 
+$categories = []; // Initialize empty array for categories
+$categories_xml_file = 'categories.xml';
+
+if (file_exists($categories_xml_file)) {
+    $xml = simplexml_load_file($categories_xml_file);
+    if ($xml !== false) {
+        foreach ($xml->category as $cat_element) {
+            // Store both name (for display) and potentially an ID or the name itself as the value
+            $categories[] = (string) $cat_element->name; // Using the name as the value for simplicity
+            // Or, if using the id attribute: $categories[(string)$cat_element['id']] = (string) $cat_element->name;
+        }
+    } else {
+        // Failed to parse XML, maybe use default hardcoded categories or show error
+        error_log("Failed to parse categories.xml");
+        // Example fallback: $categories = ['Electronics', 'Furniture', 'Clothing', 'Other'];
+    }
+} else {
+    // File not found
+     error_log("categories.xml not found at: " . $categories_xml_file);
+     // Example fallback: $categories = ['Electronics', 'Furniture', 'Clothing', 'Other'];
+}
+
 $error_message = '';
 $success_message = '';
 $form_data = [
@@ -201,16 +223,23 @@ $conn->close();
                         <input type="number" id="price" name="price" step="0.01" min="0" required value="<?php echo htmlspecialchars($form_data['price']); ?>">
                     </div>
                     <div class="form-group form-group-half">
-                        <label for="category">Category*</label>
+                    <label for="category">Category*</label>
                         <select id="category" name="category" required>
-                            <option value="" <?php echo ($form_data['category'] == '') ? 'selected' : ''; ?>>-- Select Category --</option>
-                            <option value="Electronics" <?php echo ($form_data['category'] == 'Electronics') ? 'selected' : ''; ?>>Electronics</option>
-                            <option value="Furniture" <?php echo ($form_data['category'] == 'Furniture') ? 'selected' : ''; ?>>Furniture</option>
-                            <option value="Clothing" <?php echo ($form_data['category'] == 'Clothing') ? 'selected' : ''; ?>>Clothing & Accessories</option>
-                            <option value="Home & Garden" <?php echo ($form_data['category'] == 'Home & Garden') ? 'selected' : ''; ?>>Home & Garden</option>
-                            <option value="Sports & Outdoors" <?php echo ($form_data['category'] == 'Sports & Outdoors') ? 'selected' : ''; ?>>Sports & Outdoors</option>
-                            <option value="Books & Media" <?php echo ($form_data['category'] == 'Books & Media') ? 'selected' : ''; ?>>Books & Media</option>
-                            <option value="Other" <?php echo ($form_data['category'] == 'Other') ? 'selected' : ''; ?>>Other</option>
+                            <option value="">-- Select Category --</option>
+                            <?php
+                            // --- Generate options from XML data --- <--- MODIFIED SECTION
+                            if (!empty($categories)) {
+                                foreach ($categories as $category_name) {
+                                    $selected = ($form_data['category'] == $category_name) ? 'selected' : '';
+                                    echo "<option value=\"" . htmlspecialchars($category_name) . "\" $selected>"
+                                         . htmlspecialchars($category_name)
+                                         . "</option>";
+                                }
+                            } else {
+                                // Fallback or error message if categories couldn't be loaded
+                                echo "<option value='' disabled>Error loading categories</option>";
+                            }
+                            ?>
                         </select>
                     </div>
                 </div>

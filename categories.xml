@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<categories>
+    <category id="electronics">
+        <name>Electronics</name>
+        <description>Gadgets, computers, phones, etc.</description> <!-- Optional extra info -->
+    </category>
+    <category id="furniture">
+        <name>Furniture</name>
+        <description>Chairs, tables, sofas, beds, etc.</description>
+    </category>
+    <category id="clothing">
+        <name>Clothing &amp; Accessories</name> <!-- Use & here -->
+        <description>Apparel, shoes, bags, jewelry.</description>
+    </category>
+    <category id="home_garden">
+        <name>Home &amp; Garden</name>
+        <description>Kitchenware, decor, tools, plants.</description>
+    </category>
+    <category id="sports_outdoors">
+        <name>Sports &amp; Outdoors</name>
+        <description>Bikes, camping gear, fitness equipment.</description>
+    </category>
+    <category id="books_media">
+        <name>Books &amp; Media</name>
+        <description>Books, movies, music, video games.</description>
+    </category>
+     <category id="vehicles">
+        <name>Vehicles</name>
+        <description>Cars, motorcycles, parts.</description>
+    </category>
+    <category id="other">
+        <name>Other</name>
+        <description>Miscellaneous items.</description>
+    </category>
+</categories>
