@@ -1,4 +1,4 @@
-# 22BBS0129 - Achintya V
+# 22BBS0129 - Achintya Varshneya
 # Resell Hub – A Simple Reselling Platform
 
 ## 1. Startup Overview
