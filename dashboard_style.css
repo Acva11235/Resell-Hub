@@ -1,0 +1,131 @@
+.dashboard-page {
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.dashboard-page h1 {
+    text-align: left; 
+    margin-bottom: 30px;
+    font-size: 2.2em;
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+}
+
+.user-menu span {
+    color: #555;
+    font-weight: 600;
+}
+
+.user-menu a {
+    color: #333;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+.user-menu a:not(.btn):hover {
+    color: #F9A826; 
+    text-decoration: none;
+}
+
+.btn-small-nav {
+    padding: 6px 15px;
+    font-size: 0.9em;
+    margin-left: 5px; 
+}
+
+.stats-container {
+    display: flex;
+    gap: 30px; 
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.stat-box {
+    flex: 1; 
+    min-width: 200px; 
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+.stat-box h3 {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.stat-number {
+    font-size: 2.8em;
+    font-weight: 700;
+    color: #2F4F4F; 
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+.stat-link {
+    font-weight: 600;
+    color: #3A7CA5; 
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.stat-link:hover {
+    color: #F9A826; 
+    text-decoration: underline;
+}
+
+.stat-box-action {
+    justify-content: center; 
+    align-items: center;
+     background-color: #F8F9FA; 
+}
+
+.stat-box-action h3 {
+    margin-bottom: 25px;
+}
+
+.recent-activity {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.recent-activity h2 {
+    text-align: left; 
+    margin-bottom: 20px;
+    font-size: 1.6em;
+}
+
+.activity-placeholder p {
+    color: #777;
+    font-style: italic;
+}
+
+.recent-activity ul {
+    list-style: none;
+    padding: 0;
+}
+
+.recent-activity li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #e0e0e0;
+    color: #444;
+}
+
+.recent-activity li:last-child {
+    border-bottom: none;
+}
+
+.recent-activity li strong {
+    color: #2F4F4F;
+}

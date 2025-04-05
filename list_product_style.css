@@ -1,0 +1,149 @@
+.list-product-page {
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.list-product-page h1 {
+    text-align: left;
+    margin-bottom: 10px;
+    font-size: 2.2em;
+}
+
+.list-product-page > p {
+    margin-bottom: 30px;
+    color: #555;
+    font-size: 1.1em;
+}
+
+.list-product-form {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+}
+
+.form-section {
+    margin-bottom: 35px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #eee;
+}
+
+.form-section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.form-section h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #F9A826;
+    box-shadow: 0 0 0 2px rgba(249, 168, 38, 0.2);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group-half {
+    flex: 1;
+}
+
+.form-group input[type="file"] {
+    padding: 10px;
+    border: 1px dashed #ccc;
+    background-color: #f8f9fa;
+    cursor: pointer;
+}
+
+.form-group input[type="file"]:hover {
+    border-color: #F9A826;
+}
+
+.image-preview-container {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    min-height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+.preview-placeholder {
+    color: #888;
+    font-style: italic;
+}
+
+.img-preview-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.img-preview {
+    max-width: 120px;
+    max-height: 120px;
+    height: auto;
+    width: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.form-actions {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+}
+
+.list-product-page .error-message,
+.list-product-page .success-message {
+    margin-bottom: 25px;
+    padding: 15px;
+}

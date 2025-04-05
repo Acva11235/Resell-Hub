@@ -1,0 +1,196 @@
+.my-listings-page {
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.page-header h1 {
+    margin-bottom: 0;
+    font-size: 2.2em;
+    text-align: left;
+}
+
+.no-listings {
+    background-color: #f8f9fa;
+    border: 1px dashed #ccc;
+    padding: 40px;
+    text-align: center;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.no-listings p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.listings-table-container {
+    overflow-x: auto;
+}
+
+.listings-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.07);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.listings-table th,
+.listings-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+
+.listings-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #333;
+    font-size: 0.95em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.listings-table tbody tr:hover {
+    background-color: #fdfdfd;
+}
+
+.listings-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.listing-image img {
+    max-width: 70px;
+    max-height: 70px;
+    height: auto;
+    width: auto;
+    border-radius: 4px;
+    border: 1px solid #eee;
+    object-fit: cover;
+    display: block;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.status-active {
+    background-color: #28a745;
+}
+
+.status-sold {
+    background-color: #6c757d;
+}
+
+.status-inactive {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.listing-actions {
+    white-space: nowrap;
+}
+
+.btn-action {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    text-decoration: none;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+.btn-action:last-child {
+    margin-right: 0;
+}
+
+.btn-action:hover {
+    opacity: 0.85;
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-edit {
+    background-color: #007bff;
+}
+
+.btn-sold {
+    background-color: #6c757d;
+}
+.btn-activate {
+    background-color: #28a745;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+}
+
+@media (max-width: 768px) {
+    .listings-table thead {
+        display: none;
+    }
+    .listings-table, .listings-table tbody, .listings-table tr, .listings-table td {
+        display: block;
+        width: 100%;
+    }
+    .listings-table tr {
+        margin-bottom: 15px;
+        border: 1px solid #eee;
+        border-radius: 5px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .listings-table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        border-bottom: 1px solid #eee;
+    }
+    .listings-table td:last-child {
+        border-bottom: none;
+    }
+    .listings-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+        color: #333;
+    }
+    .listing-image {
+        text-align: right;
+    }
+    .listing-image img {
+        float: right;
+    }
+    .listing-actions {
+        text-align: right;
+    }
+    .listing-actions .btn-action {
+        margin-bottom: 5px;
+    }
+}
