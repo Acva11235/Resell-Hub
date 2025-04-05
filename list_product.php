@@ -17,19 +17,13 @@ if (file_exists($categories_xml_file)) {
     $xml = simplexml_load_file($categories_xml_file);
     if ($xml !== false) {
         foreach ($xml->category as $cat_element) {
-            // Store both name (for display) and potentially an ID or the name itself as the value
-            $categories[] = (string) $cat_element->name; // Using the name as the value for simplicity
-            // Or, if using the id attribute: $categories[(string)$cat_element['id']] = (string) $cat_element->name;
+            $categories[] = (string) $cat_element->name; 
         }
     } else {
-        // Failed to parse XML, maybe use default hardcoded categories or show error
         error_log("Failed to parse categories.xml");
-        // Example fallback: $categories = ['Electronics', 'Furniture', 'Clothing', 'Other'];
     }
 } else {
-    // File not found
      error_log("categories.xml not found at: " . $categories_xml_file);
-     // Example fallback: $categories = ['Electronics', 'Furniture', 'Clothing', 'Other'];
 }
 
 $error_message = '';
@@ -227,7 +221,6 @@ $conn->close();
                         <select id="category" name="category" required>
                             <option value="">-- Select Category --</option>
                             <?php
-                            // --- Generate options from XML data --- <--- MODIFIED SECTION
                             if (!empty($categories)) {
                                 foreach ($categories as $category_name) {
                                     $selected = ($form_data['category'] == $category_name) ? 'selected' : '';
@@ -236,7 +229,6 @@ $conn->close();
                                          . "</option>";
                                 }
                             } else {
-                                // Fallback or error message if categories couldn't be loaded
                                 echo "<option value='' disabled>Error loading categories</option>";
                             }
                             ?>

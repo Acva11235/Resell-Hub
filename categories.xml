@@ -2,14 +2,14 @@
 <categories>
     <category id="electronics">
         <name>Electronics</name>
-        <description>Gadgets, computers, phones, etc.</description> <!-- Optional extra info -->
+        <description>Gadgets, computers, phones, etc.</description> 
     </category>
     <category id="furniture">
         <name>Furniture</name>
         <description>Chairs, tables, sofas, beds, etc.</description>
     </category>
     <category id="clothing">
-        <name>Clothing &amp; Accessories</name> <!-- Use & here -->
+        <name>Clothing &amp; Accessories</name> 
         <description>Apparel, shoes, bags, jewelry.</description>
     </category>
     <category id="home_garden">
